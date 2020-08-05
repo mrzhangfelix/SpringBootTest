@@ -13,6 +13,7 @@
         <module>config</module>
         <module>logging</module>
         <module>web-restfulcrud</module>
+        <module>mybatis</module>
     </modules>
 
     <parent>
