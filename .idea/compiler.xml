@@ -8,9 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mybatis" />
         <module name="logging" />
-        <module name="helloworld" />
         <module name="web-restfulcrud" />
+        <module name="springboot" />
         <module name="config" />
+        <module name="helloworld" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,6 +21,7 @@
       <module name="helloworld" options="-parameters" />
       <module name="logging" options="-parameters" />
       <module name="mybatis" options="-parameters" />
+      <module name="springboot" options="-parameters" />
       <module name="web-restfulcrud" options="-parameters" />
     </option>
   </component>

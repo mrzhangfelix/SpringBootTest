@@ -3,8 +3,9 @@ package com.felix.config;
 import com.felix.filter.MyFilter;
 import com.felix.listener.MyListener;
 import com.felix.servlet.MyServlet;
-import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
+import org.springframework.boot.autoconfigure.web.servlet.TomcatServletWebServerFactoryCustomizer;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -41,15 +42,10 @@ public class MyServerConfig {
 
     //配置嵌入式的Servlet容器
     @Bean
-    public EmbeddedServletContainerCustomizer embeddedServletContainerCustomizer(){
-        return new EmbeddedServletContainerCustomizer() {
-
-            //定制嵌入式的Servlet容器相关的规则
-            @Override
-            public void customize(ConfigurableEmbeddedServletContainer container) {
-                container.setPort(8083);
-            }
-        };
+    public WebServerFactoryCustomizer embeddedServletContainerCustomizer(){
+        ServerProperties serverProperties=new ServerProperties();
+        serverProperties.setPort(8081);
+        return new TomcatServletWebServerFactoryCustomizer(serverProperties);
     }
 
 }
