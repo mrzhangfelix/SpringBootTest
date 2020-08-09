@@ -15,12 +15,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-public class DruidConfig {
+public class  DruidConfig {
 
     @ConfigurationProperties(prefix = "spring.datasource")
     @Bean
     public DataSource druid(){
-        return  new DruidDataSource();
+        return new DruidDataSource();
     }
 
     //配置Druid的监控
