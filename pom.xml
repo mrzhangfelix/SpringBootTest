@@ -17,6 +17,9 @@
         <module>springboot</module>
         <module>cache</module>
         <module>amqp</module>
+        <module>elasticsearch</module>
+        <module>task</module>
+        <module>security</module>
     </modules>
 
     <parent>
